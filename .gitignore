@@ -1,0 +1,20 @@
+# Prompt original
+# Prompt para Claude en Antigravity Copi.md
+
+# Build de Java/Maven
+target/
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+auditoria.log
+
+# OS
+.DS_Store
+Thumbs.db
