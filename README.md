@@ -72,25 +72,4 @@ TRABAJO EN CLASE 0623/
 - **PEL (Pending Entries List):** Tracks messages delivered but not yet acknowledged.
 - **XAUTOCLAIM / XCLAIM:** Allow a different consumer to reclaim messages left unacknowledged by a failed consumer.
 
----
 
-## Quick Start Checklist
-
-### 1. Infrastructure
-- [ ] `docker run -d --name redis-auditoria -p 6379:6379 redis:7`
-- [ ] `docker exec redis-auditoria redis-cli XGROUP CREATE banco.transferencias auditoria-group $ MKSTREAM`
-- [ ] `docker exec redis-auditoria redis-cli XINFO GROUPS banco.transferencias`
-
-### 2. Event Producer (run in terminal 1)
-- [ ] `cd parte4-productor`
-- [ ] `mvn clean package -DskipTests`
-- [ ] `java -jar target/simulador-transferencias-1.0.0.jar`
-
-### 3. Audit Consumer (run in terminal 2)
-- [ ] `cd parte2-consumidor`
-- [ ] `mvn clean package -DskipTests`
-- [ ] `java -jar target/auditoria-consumidor-1.0.0.jar`
-
-### 4. Failure Simulation (run in terminal 3 after some events)
-- [ ] `cd parte3-simulacion`
-- [ ] `./simular-caida.sh`
